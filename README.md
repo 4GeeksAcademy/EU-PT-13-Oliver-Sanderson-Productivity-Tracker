@@ -16,3 +16,11 @@ The productivity tracker will store collected information in a backend system cr
 ## Tracker (Chrome Extension) 
 
 The productivity tracker itself that is used to track the users time spent on the browser and specific websites will be a Chrome Extension built using HTML, CSS and JavaScript. 
+
+# APIs 
+
+The productivity tracker will have its own API to store users information and the times related to browsing. This will be protected however may be used when working out statistics such as average time browsing per session. 
+
+Cloudinary API -  Will be used to store users profile images. 
+
+Google Maps API – Will be used to see browsing locations stored in users protected data. This can then be used to show the most productive locations. For example, browsing at home vs at the library. 
