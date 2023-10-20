@@ -7,8 +7,12 @@ The productivity tracker will be used during internet browsing sessions to track
 
 ## Front-end 
 
-The productivity tracker will use a (single page application) website as the front-end user interface built with HTML, CSS, JavaScript and React. It will have a user login system based on a JSON Web Tokens that will be required to use the application as well as viewing or editing any personal data. 
+The productivity tracker will use a website (single page application) as the front-end user interface built with HTML, CSS, JavaScript and React. It will have a user login system based on a JSON Web Tokens that will be required to use the application as well as viewing or editing any personal data. 
 
 ## Back-end 
 
 The productivity tracker will store collected information in a backend system created with Python and the data will be accessible through a protected API. 
+
+## Tracker (Chrome Extension) 
+
+The productivity tracker itself that is used to track the users time spent on the browser and specific websites will be a Chrome Extension built using HTML, CSS and JavaScript. 
