@@ -27,6 +27,8 @@ class Session(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     date = db.Column(db.DateTime, nullable=False)
     time_spent_secs = db.Column(db.Integer, nullable=False)
+    work_time_secs = db.Column(db.Integer, nullable=False)
+    fun_time_secs = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f'<Session {self.date}>'
@@ -37,6 +39,8 @@ class Session(db.Model):
             "user_id": self.user_id,
             "date": self.date,
             "time_spent_secs": self.time_spent_secs,
+            "work_time_secs": self.work_time_secs,
+            "fun_time_secs": self.fun_time_secs,
         }
     
 class Test(db.Model):
