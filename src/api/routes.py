@@ -19,7 +19,7 @@ def handle_users():
         # {
         # "name" : "Fname Lname",
         # "email" : "test343@test343.com",
-        # "password" : "1234",
+        # "password" : "1234"
         # }
 
         request_body = request.get_json()
@@ -80,10 +80,15 @@ def handle_users():
 def handle_sessions():
 
     if request.method == "DELETE":
-            Session.query.filter(Session.id >= 0).delete()
+        request_body = request.get_json()
+        # Check request_body has 'id'
+        if ('user_id' in request_body):
+            Session.query.filter(Session.user_id == request_body['user_id']).delete()
             db.session.commit()
-            response_body = "Deleted all!"
+        else:
+            response_body = "Missing body content. Need 'user_id' of the related sessions to delete."
             return jsonify(response_body), 200
+
 
     if request.method == "POST":
 
@@ -116,15 +121,9 @@ def handle_sessions():
             return jsonify(response_body), 200
 
 
-    # What is sent on GET or successful POST
+    # What is sent on GET or successful POST / DELETE
     response_body = []
     results = Session.query.all()
-    # for index, result in enumerate(results):
-            
-    #         response_body["time_spent" + str(index)] = (result.time_spent_secs)
-    #         response_body["fun_time" + str(index)] = (result.fun_time_secs)
-    #         response_body["work_time" + str(index)] = (result.work_time_secs)
-    # return jsonify(response_body), 200
     for index, result in enumerate(results):
             temp = {}
             temp["id"] = (result.id)

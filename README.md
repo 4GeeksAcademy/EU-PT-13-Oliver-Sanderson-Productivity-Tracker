@@ -107,4 +107,34 @@ The productivity tracker will have its own API to store users information and th
 
 Cloudinary API -  Will be used to store users profile images. 
 
-Google Maps API – Will be used to see browsing locations stored in users protected data. This can then be used to show the most productive locations. For example, browsing at home vs at the library. 
+Google Maps API – Will be used to see browsing locations stored in users protected data. This can then be used to show the most productive locations. For example, browsing at home vs at the library.
+
+# Using Back-end API
+
+There are currently two back end URLs:
+* BaseURL... /api/users
+  * GET - Shows all users
+  * POST - Add a new user. Body should follow below format:  
+  {  
+  "name" : "Fname Lname",  
+  "email" : "test343@test343.com",  
+  "password" : "1234",  
+  }  
+  * DELETE - Remove a user **and all related sessions**. Body should follow below format:  
+  {  
+  "id" : 1  
+  }  
+
+* BaseURL... /api/sessions
+  * GET - Shows all sessions
+  * POST - Add a new session. Body should follow below format:  
+  {  
+  "current_user_id" : 3,  
+  "total_time" : 1000,  
+  "work_time" : 600,  
+  "fun_time" : 400  
+  }  
+  * DELETE - Currently deletes all sessions for a specific user. Body should follow below format:  
+  {  
+  "user_id" : 1  
+  }  
