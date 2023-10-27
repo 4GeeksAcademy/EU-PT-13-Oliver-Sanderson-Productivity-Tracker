@@ -120,6 +120,14 @@ There are currently two back end URLs:
   "email" : "test343@test343.com",  
   "password" : "1234",  
   }  
+  * PUT - Updates an existing users data. Body should follow below format:  
+  (Note that both "name" and "email" are optional here.)  
+  {  
+  "id" : 1,  
+  "name" : "newName",  
+  "email" : "newEmail"  
+  } 
+
   * DELETE - Remove a user **and all related sessions**. Body should follow below format:  
   {  
   "id" : 1  

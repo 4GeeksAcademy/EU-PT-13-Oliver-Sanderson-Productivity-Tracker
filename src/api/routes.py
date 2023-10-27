@@ -10,7 +10,7 @@ from sqlalchemy import delete
 api = Blueprint('api', __name__)
 
 
-@api.route('/users', methods=['GET', 'POST', 'DELETE'])
+@api.route('/users', methods=['GET', 'POST', 'DELETE', 'PUT'])
 def handle_users():
 
     if request.method == "POST":
@@ -36,6 +36,34 @@ def handle_users():
 
         else: 
             response_body = "Missing body content"
+            return jsonify(response_body), 200
+
+    if request.method == "PUT":
+        request_body = request.get_json()
+
+        # Example PUT body:
+        # {
+        # "id" : 1,
+        # "name" : "newName"
+        # "email" : "newEmail"
+        # }
+
+        # Check request_body has 'id'
+        if ('id' in request_body):
+            # Check the user exists
+            check = User.query.filter(User.id == request_body["id"]).first()
+            if check is not None:
+                user_to_edit = User.query.filter(User.id == request_body["id"]).first()
+                if ('name' in request_body):
+                    user_to_edit.name = request_body['name']
+                if ('email' in request_body):
+                    user_to_edit.email = request_body['email']
+            else:
+                response_body = "User does not exist"
+                return jsonify(response_body), 200
+
+        else:
+            response_body = "Missing body content. Needs 'id' of the user to update."
             return jsonify(response_body), 200
 
     if request.method == "DELETE":
@@ -104,6 +132,7 @@ def handle_sessions():
         request_body = request.get_json()
         
         # Check request_body has all required fields
+        # TODO check current_user_id exists in User
         if ('current_user_id' in request_body and 'total_time' in request_body and 'work_time' in request_body and 'fun_time' in request_body):
 
             session = Session()
