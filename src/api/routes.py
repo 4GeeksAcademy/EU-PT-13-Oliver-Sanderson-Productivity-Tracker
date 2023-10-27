@@ -10,17 +10,70 @@ from sqlalchemy import delete
 api = Blueprint('api', __name__)
 
 
-@api.route('/users', methods=['GET'])
+@api.route('/users', methods=['GET', 'POST', 'DELETE'])
 def handle_users():
+
+    if request.method == "POST":
+
+        # Example POST body:
+        # {
+        # "name" : "Fname Lname",
+        # "email" : "test343@test343.com",
+        # "password" : "1234",
+        # }
+
+        request_body = request.get_json()
+        # Check request_body has all required fields
+        if ('name' in request_body and 'email' in request_body and 'password' in request_body):
+            new_user = User()
+            new_user.name = request_body["name"]
+            new_user.email = request_body["email"]
+            new_user.password = request_body["password"]
+            new_user.is_active = True
+
+            db.session.add(new_user)
+            db.session.commit()
+
+        else: 
+            response_body = "Missing body content"
+            return jsonify(response_body), 200
+
+    if request.method == "DELETE":
+        request_body = request.get_json()
+
+        # Example DELETE body:
+        # {
+        # "id" : 1
+        # }
+
+        # Check request_body has 'id'
+        if ('id' in request_body):
+
+            # Check the user exists
+            check = User.query.filter(User.id == request_body["id"]).first()
+            if check is not None:
+                # First delete related sessions
+                Session.query.filter(Session.user_id == request_body["id"]).delete()
+                # Then delete user
+                User.query.filter(User.id == request_body["id"]).delete()
+                db.session.commit()
+            else:
+                response_body = "User does not exist"
+            return jsonify(response_body), 200
+
+        else: 
+            response_body = "Missing body content. Need 'id' of the user to delete."
+            return jsonify(response_body), 200
 
     users = User.query.all()
 
-    response_body = {}
-
-    for index, user in enumerate(users):
-        response_body["id" + str(index)] = (user.id)
-
-
+    response_body = []
+    for user in users:
+        temp_user = {}
+        temp_user["id"] = (user.id)
+        temp_user["name"] = (user.name)
+        temp_user["email"] = (user.email)
+        response_body.append(temp_user)
     return jsonify(response_body), 200
 
 @api.route('/sessions', methods=['GET', 'POST', 'DELETE'])
@@ -33,33 +86,57 @@ def handle_sessions():
             return jsonify(response_body), 200
 
     if request.method == "POST":
-        # We create an instance without being recorded in the database
-        session = Session()
-        session.user_id = 3
-        session.email = "test@test.com"
-        session.date = datetime.datetime.now()
-        session.time_spent_secs = 666
-        session.work_time_secs = 333
-        session.fun_time_secs = 333
 
-        # We tell the database we want to record this user
-        db.session.add(session)
-        db.session.commit()
+        # Example POST body:
+        # {
+        #     "current_user_id" : 3,
+        #     "total_time" : 1000,
+        #     "work_time" : 600,
+        #     "fun_time" : 400
+        # }
 
-    # GET request just does this part
+        # Process the information coming from the client
+        request_body = request.get_json()
+        
+        # Check request_body has all required fields
+        if ('current_user_id' in request_body and 'total_time' in request_body and 'work_time' in request_body and 'fun_time' in request_body):
 
-    response_body = {}
+            session = Session()
+            session.user_id = request_body["current_user_id"]
+            session.date = datetime.datetime.now()
+            session.time_spent_secs = request_body["total_time"]
+            session.work_time_secs = request_body["work_time"]
+            session.fun_time_secs = request_body["fun_time"]
+
+            db.session.add(session)
+            db.session.commit()
+
+        else: 
+            response_body = "Missing body content"
+            return jsonify(response_body), 200
+
+
+    # What is sent on GET or successful POST
+    response_body = []
     results = Session.query.all()
+    # for index, result in enumerate(results):
+            
+    #         response_body["time_spent" + str(index)] = (result.time_spent_secs)
+    #         response_body["fun_time" + str(index)] = (result.fun_time_secs)
+    #         response_body["work_time" + str(index)] = (result.work_time_secs)
+    # return jsonify(response_body), 200
     for index, result in enumerate(results):
-            response_body["time_spent" + str(index)] = (result.time_spent_secs)
-            response_body["fun_time" + str(index)] = (result.fun_time_secs)
-            response_body["work_time" + str(index)] = (result.work_time_secs)
-
-
-    # for index, session in enumerate(sessions):
-    #     response_body["date" + str(index)] = (session.date)
-
+            temp = {}
+            temp["id"] = (result.id)
+            temp["user_id"] = (result.user_id)
+            temp["time_spent"] = (result.time_spent_secs)
+            temp["fun_time"] = (result.fun_time_secs)
+            temp["work_time"] = (result.work_time_secs)
+            response_body.append(temp)
     return jsonify(response_body), 200
+
+
+
 
 @api.route('/test', methods=['GET', 'DELETE'])
 def handle_tests():
