@@ -10,6 +10,12 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Jumbotron } from "./component/jumbotron";
+import { MockupSaas } from "./component/mockupSaas";
+import { Features } from "./component/features";
+
+
+
 
 //create your first component
 const Layout = () => {

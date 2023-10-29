@@ -1,10 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
+import "./style.css";
 
-export const Footer = () => (
-	<footer className="footer mt-auto py-3 text-center">
-		<p>
-			Made with <i className="fa fa-heart text-danger" /> by{" "}
-			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
-		</p>
-	</footer>
-);
+
+const Footer = () => {
+    const year = new Date().getFullYear();
+  
+    return  <div className="desktop-footer">{`Copyright © Your Website ${year}`}
+    <p className="item-item-item">
+      <span className="text-wrapper">Terms & Conditions</span>
+      <span className="span"> | </span>
+      <span className="text-wrapper">FAQ's</span>
+      <span className="span"> | </span>
+      <span className="text-wrapper"> Feedback</span>
+    </p>
+  </div>
+    
+  };
+  
+  export default Footer;
+
+ 
