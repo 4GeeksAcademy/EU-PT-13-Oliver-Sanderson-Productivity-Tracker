@@ -107,4 +107,64 @@ The productivity tracker will have its own API to store users information and th
 
 Cloudinary API -  Will be used to store users profile images. 
 
-Google Maps API – Will be used to see browsing locations stored in users protected data. This can then be used to show the most productive locations. For example, browsing at home vs at the library. 
+Google Maps API – Will be used to see browsing locations stored in users protected data. This can then be used to show the most productive locations. For example, browsing at home vs at the library.
+
+# Using Back-end API
+
+The current back-end URLs:
+
+* BaseURL... /api/token
+  * POST - returns a valid JWT when correct login credentials are sent. Body should follow the below format:  
+  {  
+  "email" : "user@email.com",  
+  "password" : "1234"  
+  }  
+
+* BaseURL... /api/signup
+  * POST - Add a new user. Body should follow below format:  
+  {  
+  "name" : "Fname Lname",  
+  "email" : "test343@test343.com",  
+  "password" : "1234"    
+  }  
+
+The following URLs are protected and need a valid JWT in the authentication header to access.
+Example of how fetch might look with authorization:  
+fetch(URL + "/api/sessions", {  
+				method: "GET",  
+				headers: {"Authorization": "Bearer " + token}  
+			})  
+			.then((recieved) => recieved.json())  
+			.then((data) => {  
+				return data  
+			})  
+			.catch((error) => console.log(error)  
+
+* BaseURL... /api/users
+  * GET - Shows all users
+  * PUT - Updates an existing users data. Body should follow below format:  
+  (Note that both "name" and "email" are optional here.)  
+  {  
+  "id" : 1,  
+  "name" : "newName",  
+  "email" : "newEmail"  
+  } 
+
+  * DELETE - Remove a user **and all related sessions**. Body should follow below format:  
+  {  
+  "id" : 1  
+  }  
+
+* BaseURL... /api/sessions
+  * GET - Shows all sessions
+  * POST - Add a new session. Body should follow below format:  
+  {  
+  "current_user_id" : 3,  
+  "total_time" : 1000,  
+  "work_time" : 600,  
+  "fun_time" : 400  
+  }  
+  * DELETE - Currently deletes all sessions for a specific user. Body should follow below format:  
+  {  
+  "user_id" : 1  
+  }  
