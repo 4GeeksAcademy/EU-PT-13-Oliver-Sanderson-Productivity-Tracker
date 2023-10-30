@@ -111,15 +111,37 @@ Google Maps API – Will be used to see browsing locations stored in users prote
 
 # Using Back-end API
 
-There are currently two back end URLs:
-* BaseURL... /api/users
-  * GET - Shows all users
+The current back-end URLs:
+
+* BaseURL... /api/token
+  * POST - returns a valid JWT when correct login credentials are sent. Body should follow the below format:  
+  {  
+  "email" : "user@email.com",  
+  "password" : "1234"  
+  }  
+
+* BaseURL... /api/signup
   * POST - Add a new user. Body should follow below format:  
   {  
   "name" : "Fname Lname",  
   "email" : "test343@test343.com",  
-  "password" : "1234",  
+  "password" : "1234"    
   }  
+
+The following URLs are protected and need a valid JWT in the authentication header to access.
+Example of how fetch might look with authorization:  
+fetch(URL + "/api/sessions", {  
+				method: "GET",  
+				headers: {"Authorization": "Bearer " + token}  
+			})  
+			.then((recieved) => recieved.json())  
+			.then((data) => {  
+				return data  
+			})  
+			.catch((error) => console.log(error)  
+
+* BaseURL... /api/users
+  * GET - Shows all users
   * PUT - Updates an existing users data. Body should follow below format:  
   (Note that both "name" and "email" are optional here.)  
   {  
