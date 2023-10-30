@@ -1,8 +1,12 @@
 import PropTypes from "prop-types";
 import React from "react";
-import "./style.css";
+import "../../styles/style.css";
 
-export const MockupSaas = ({ className, rectangleClassName, rectangle = "rectangle-21.png" }) => {
+export const MockupSaas = ({
+  className,
+  rectangleClassName,
+  rectangle = "https://c.animaapp.com/me0UN20d/img/rectangle-21.png",
+}) => {
   return (
     <div className={`mockup-saas ${className}`}>
       <img className={`rectangle ${rectangleClassName}`} alt="Rectangle" src={rectangle} />
