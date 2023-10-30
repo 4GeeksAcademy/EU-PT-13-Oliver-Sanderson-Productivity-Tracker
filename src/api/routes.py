@@ -6,15 +6,43 @@ from api.models import db, User, Session, Test
 from api.utils import generate_sitemap, APIException
 import datetime
 from sqlalchemy import delete
+from flask_jwt_extended import (
+    JWTManager, jwt_required, create_access_token,
+    get_jwt_identity, 
+)
+
 
 api = Blueprint('api', __name__)
 
+@api.route('/token', methods=['POST'])
+def handle_token():
+    # Process the information coming from the client
+    user_data = request.get_json()
+    
+    user = User.query.filter_by(email=user_data["email"]).first()
 
-@api.route('/users', methods=['GET', 'POST', 'DELETE', 'PUT'])
-def handle_users():
+    if not user or not user.check_password(user_data["password"]):
+        return jsonify( {"message": "Wrong username or password"}), 401
+    
+    # Returns token that can be saved in local storage.
+    access_token = create_access_token(identity=user.serialize())
+    return jsonify(access_token=access_token)
 
-    if request.method == "POST":
+# users and sessions now require a token to access.
+# Example of how fetch might look with authorization:
+# fetch(URL + "/api/sessions", {
+# 				method: "GET",
+# 				headers: {"Authorization": "Bearer " + token}
+# 			})
+# 			.then((recieved) => recieved.json())
+# 			.then((data) => {
+# 				return data
+# 			})
+# 			.catch((error) => console.log(error))
 
+@api.route('/signup', methods=['POST'])
+def handle_signup():
+        
         # Example POST body:
         # {
         # "name" : "Fname Lname",
@@ -34,9 +62,17 @@ def handle_users():
             db.session.add(new_user)
             db.session.commit()
 
+            response_body = "User created"
+            return jsonify(response_body), 400
+
         else: 
             response_body = "Missing body content"
-            return jsonify(response_body), 200
+            return jsonify(response_body), 400
+
+
+@api.route('/users', methods=['GET', 'DELETE', 'PUT'])
+@jwt_required()
+def handle_users():
 
     if request.method == "PUT":
         request_body = request.get_json()
@@ -60,11 +96,11 @@ def handle_users():
                     user_to_edit.email = request_body['email']
             else:
                 response_body = "User does not exist"
-                return jsonify(response_body), 200
+                return jsonify(response_body), 400
 
         else:
             response_body = "Missing body content. Needs 'id' of the user to update."
-            return jsonify(response_body), 200
+            return jsonify(response_body), 400
 
     if request.method == "DELETE":
         request_body = request.get_json()
@@ -85,13 +121,16 @@ def handle_users():
                 # Then delete user
                 User.query.filter(User.id == request_body["id"]).delete()
                 db.session.commit()
+
+                response_body = "User deleted"
+                return jsonify(response_body), 200
             else:
                 response_body = "User does not exist"
-            return jsonify(response_body), 200
+                return jsonify(response_body), 401
 
         else: 
             response_body = "Missing body content. Need 'id' of the user to delete."
-            return jsonify(response_body), 200
+            return jsonify(response_body), 400
 
     users = User.query.all()
 
@@ -101,10 +140,12 @@ def handle_users():
         temp_user["id"] = (user.id)
         temp_user["name"] = (user.name)
         temp_user["email"] = (user.email)
+
         response_body.append(temp_user)
     return jsonify(response_body), 200
 
 @api.route('/sessions', methods=['GET', 'POST', 'DELETE'])
+@jwt_required()
 def handle_sessions():
 
     if request.method == "DELETE":
@@ -115,7 +156,7 @@ def handle_sessions():
             db.session.commit()
         else:
             response_body = "Missing body content. Need 'user_id' of the related sessions to delete."
-            return jsonify(response_body), 200
+            return jsonify(response_body), 400
 
 
     if request.method == "POST":
@@ -147,7 +188,7 @@ def handle_sessions():
 
         else: 
             response_body = "Missing body content"
-            return jsonify(response_body), 200
+            return jsonify(response_body), 400
 
 
     # What is sent on GET or successful POST / DELETE
@@ -194,3 +235,4 @@ def handle_tests():
             response_body["value" + str(index)] = (testers.test_value)
 
     return jsonify(response_body), 200
+

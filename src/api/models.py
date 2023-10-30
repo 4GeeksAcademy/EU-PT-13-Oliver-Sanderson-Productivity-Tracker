@@ -1,4 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
+from hmac import compare_digest
 from sqlalchemy import DateTime
 import datetime
 
@@ -21,6 +22,8 @@ class User(db.Model):
             "name": self.name,
             # do not serialize the password, its a security breach
         }
+    def check_password(self, password):
+        return compare_digest(password, self.password)
     
 class Session(db.Model):
     id = db.Column(db.Integer, primary_key=True)
