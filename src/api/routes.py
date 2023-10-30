@@ -45,7 +45,8 @@ def handle_signup():
         
         # Example POST body:
         # {
-        # "name" : "Fname Lname",
+        # "name" : "Fname",
+        # "last_name" : "Lname",
         # "email" : "test343@test343.com",
         # "password" : "1234"
         # }
@@ -55,6 +56,7 @@ def handle_signup():
         if ('name' in request_body and 'email' in request_body and 'password' in request_body):
             new_user = User()
             new_user.name = request_body["name"]
+            new_user.last_name = request_body["last_name"]
             new_user.email = request_body["email"]
             new_user.password = request_body["password"]
             new_user.is_active = True
@@ -139,6 +141,7 @@ def handle_users():
         temp_user = {}
         temp_user["id"] = (user.id)
         temp_user["name"] = (user.name)
+        temp_user["last_name"] = (user.last_name)
         temp_user["email"] = (user.email)
 
         response_body.append(temp_user)
