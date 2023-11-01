@@ -24,7 +24,7 @@ const Login = () => {
         setError("Invalid email or password"); 
       }
     } catch (error) {
-      setError("An error occurred"); 
+      setError(error); 
     }
   };
 
