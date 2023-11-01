@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Session, Test
 from api.utils import generate_sitemap, APIException
 import datetime
-from sqlalchemy import delete
+from sqlalchemy import delete, update
 from flask_jwt_extended import (
     JWTManager, jwt_required, create_access_token,
     get_jwt_identity, 
@@ -45,7 +45,8 @@ def handle_signup():
         
         # Example POST body:
         # {
-        # "name" : "Fname Lname",
+        # "name" : "Fname",
+        # "last_name" : "Lname",
         # "email" : "test343@test343.com",
         # "password" : "1234"
         # }
@@ -55,6 +56,7 @@ def handle_signup():
         if ('name' in request_body and 'email' in request_body and 'password' in request_body):
             new_user = User()
             new_user.name = request_body["name"]
+            new_user.last_name = request_body["last_name"]
             new_user.email = request_body["email"]
             new_user.password = request_body["password"]
             new_user.is_active = True
@@ -68,6 +70,7 @@ def handle_signup():
         else: 
             response_body = "Missing body content"
             return jsonify(response_body), 400
+
 
 
 @api.route('/users', methods=['GET', 'DELETE', 'PUT'])
@@ -94,6 +97,8 @@ def handle_users():
                     user_to_edit.name = request_body['name']
                 if ('email' in request_body):
                     user_to_edit.email = request_body['email']
+
+                # TODO update the new values to session
             else:
                 response_body = "User does not exist"
                 return jsonify(response_body), 400
@@ -139,14 +144,50 @@ def handle_users():
         temp_user = {}
         temp_user["id"] = (user.id)
         temp_user["name"] = (user.name)
+        temp_user["last_name"] = (user.last_name)
         temp_user["email"] = (user.email)
 
         response_body.append(temp_user)
     return jsonify(response_body), 200
 
-@api.route('/sessions', methods=['GET', 'POST', 'DELETE'])
+@api.route('/sessions', methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def handle_sessions():
+
+    if request.method == "PUT":
+        print("PUT")
+        request_body = request.get_json()
+
+        # Example PUT body:
+        # {
+        #     "id" : 23,
+        #     "total_time" : 1000,
+        #     "work_time" : 600,
+        #     "fun_time" : 400
+        # }
+
+        # Check request_body has 'id'
+        if ('id' in request_body):
+            # Check the user exists
+            check = Session.query.filter(Session.id == request_body["id"]).first()
+            if check is not None:
+                session = Session()
+                session_to_edit = Session.query.filter(Session.id == request_body["id"]).first()
+                session_to_edit.total_time = request_body['total_time']
+                session_to_edit.work_time = request_body['work_time']
+                session_to_edit.fun_time = request_body['work_time']
+
+                print(request_body['total_time'])
+                print(session_to_edit.total_time)
+
+                # TODO update the new values to session
+            else:
+                response_body = "Session does not exist"
+                return jsonify(response_body), 400
+
+        else:
+            response_body = "Missing body content. Needs 'id' of the session to update."
+            return jsonify(response_body), 400
 
     if request.method == "DELETE":
         request_body = request.get_json()
