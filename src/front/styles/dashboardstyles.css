@@ -1,0 +1,1624 @@
+.DASHBOARD {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .DASHBOARD .overlap-wrapper {
+    background-color: #ffffff;
+    height: 1024px;
+    overflow: hidden;
+    width: 1440px;
+  }
+  
+  .DASHBOARD .overlap {
+    height: 1040px;
+    left: -118px;
+    position: relative;
+    top: -8px;
+    width: 1697px;
+  }
+  
+  .DASHBOARD .background-color {
+    background-color: #e1e7e0;
+    border: 0px none;
+    box-shadow: 0px 4px 4px #00000040;
+    height: 1040px;
+    left: 118px;
+    position: absolute;
+    top: 0;
+    width: 1458px;
+  }
+  
+  .DASHBOARD .upcoming-tasks {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #00000017, inset 0px 4px 16px #0000001c;
+    height: 221px;
+    left: 1055px;
+    position: absolute;
+    top: 606px;
+    width: 363px;
+  }
+  
+  .DASHBOARD .upcoming-task {
+    height: 32px;
+    left: 14px;
+    position: absolute;
+    top: 111px;
+    width: 325px;
+  }
+  
+  .DASHBOARD .overlap-group {
+    height: 33px;
+    left: -1px;
+    position: relative;
+    top: -1px;
+    width: 321px;
+  }
+  
+  .DASHBOARD .rectangle-bottom {
+    border: 1px solid;
+    border-color: var(--gray-200);
+    border-radius: 7px;
+    height: 32px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 321px;
+  }
+  
+  .DASHBOARD .today {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 9px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 1px;
+    white-space: nowrap;
+    width: 131px;
+  }
+  
+  .DASHBOARD .div {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 152px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 2px;
+    white-space: nowrap;
+    width: 67px;
+  }
+  
+  .DASHBOARD .today-2 {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 270px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 4px;
+    white-space: nowrap;
+    width: 47px;
+  }
+  
+  .DASHBOARD .overlap-group-wrapper {
+    height: 32px;
+    left: 14px;
+    position: absolute;
+    top: 147px;
+    width: 325px;
+  }
+  
+  .DASHBOARD .today-3 {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 9px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 1px;
+    white-space: nowrap;
+    width: 119px;
+  }
+  
+  .DASHBOARD .div-wrapper {
+    height: 32px;
+    left: 14px;
+    position: absolute;
+    top: 75px;
+    width: 325px;
+  }
+  
+  .DASHBOARD .overlap-2 {
+    border-radius: 9px;
+    height: 48px;
+    left: 9px;
+    position: absolute;
+    top: 13px;
+    width: 328px;
+  }
+  
+  .DASHBOARD .rectangle-top {
+    background-color: #fafafa;
+    border: 1px solid;
+    border-color: var(--gray-200);
+    border-radius: 9px;
+    height: 48px;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    width: 328px;
+  }
+  
+  .DASHBOARD .see-all {
+    box-shadow: 0px 4px 15px #00000040;
+    height: 14px;
+    left: 274px;
+    position: absolute;
+    top: 10px;
+    width: 46px;
+  }
+  
+  .DASHBOARD .overlap-3 {
+    height: 14px;
+    position: relative;
+    width: 44px;
+  }
+  
+  .DASHBOARD .selectarrow-instance {
+    height: 8px !important;
+    left: 35px !important;
+    position: absolute !important;
+    top: 3px !important;
+    width: 9px !important;
+  }
+  
+  .DASHBOARD .text-wrapper-2 {
+    color: #afacac;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 44px;
+  }
+  
+  .DASHBOARD .upcoming-text-wrapper {
+    height: 45px;
+    left: 10px;
+    position: absolute;
+    top: 2px;
+    width: 205px;
+  }
+  
+  .DASHBOARD .text-wrapper-3 {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    left: 0;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 0;
+    width: 203px;
+  }
+  
+  .DASHBOARD .current-tasks {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #00000017, inset 0px 4px 16px #0000001c;
+    height: 221px;
+    left: 296px;
+    position: absolute;
+    top: 606px;
+    width: 752px;
+  }
+  
+  .DASHBOARD .overlap-4 {
+    height: 123px;
+    left: 14px;
+    position: absolute;
+    top: 88px;
+    width: 731px;
+  }
+  
+  .DASHBOARD .rectangle-current {
+    border: 1px solid;
+    border-color: var(--gray-200);
+    border-radius: 7px;
+    height: 31px;
+    left: 0;
+    position: absolute;
+    top: 92px;
+    width: 729px;
+  }
+  
+  .DASHBOARD .rectangle-current-2 {
+    border: 1px solid;
+    border-color: var(--gray-200);
+    border-radius: 7px;
+    height: 32px;
+    left: 2px;
+    position: absolute;
+    top: 46px;
+    width: 729px;
+  }
+  
+  .DASHBOARD .rectangle-current-3 {
+    border: 1px solid;
+    border-color: var(--gray-200);
+    border-radius: 7px;
+    height: 32px;
+    left: 2px;
+    position: absolute;
+    top: 0;
+    width: 729px;
+  }
+  
+  .DASHBOARD .time-spent {
+    height: 118px;
+    left: 639px;
+    position: absolute;
+    top: 5px;
+    width: 90px;
+  }
+  
+  .DASHBOARD .element {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 89px;
+    white-space: nowrap;
+    width: 65px;
+  }
+  
+  .DASHBOARD .element-2 {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 44px;
+    white-space: nowrap;
+    width: 71px;
+  }
+  
+  .DASHBOARD .element-3 {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 1px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 0;
+    white-space: nowrap;
+    width: 83px;
+  }
+  
+  .DASHBOARD .date {
+    height: 118px;
+    left: 349px;
+    position: absolute;
+    top: 5px;
+    width: 90px;
+  }
+  
+  .DASHBOARD .tasks-name {
+    height: 122px;
+    left: 22px;
+    position: absolute;
+    top: 1px;
+    width: 359px;
+  }
+  
+  .DASHBOARD .element-4 {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 93px;
+    white-space: nowrap;
+    width: 353px;
+  }
+  
+  .DASHBOARD .element-5 {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 47px;
+    white-space: nowrap;
+    width: 353px;
+  }
+  
+  .DASHBOARD .p {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 14px;
+    font-weight: 500;
+    left: 0;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 0;
+    white-space: nowrap;
+    width: 270px;
+  }
+  
+  .DASHBOARD .indications {
+    height: 16px;
+    left: 38px;
+    position: absolute;
+    top: 69px;
+    width: 716px;
+  }
+  
+  .DASHBOARD .text-wrapper-4 {
+    color: #0c5313;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 3px;
+    white-space: nowrap;
+    width: 95px;
+  }
+  
+  .DASHBOARD .text-wrapper-5 {
+    color: #0c5313;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 340px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 4px;
+    white-space: nowrap;
+    width: 95px;
+  }
+  
+  .DASHBOARD .text-wrapper-6 {
+    color: #0c5313;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 615px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 95px;
+  }
+  
+  .DASHBOARD .current-tasks-title {
+    height: 47px;
+    left: 10px;
+    position: absolute;
+    top: 11px;
+    width: 736px;
+  }
+  
+  .DASHBOARD .overlap-5 {
+    height: 48px;
+    left: -1px;
+    position: relative;
+    top: -1px;
+    width: 734px;
+  }
+  
+  .DASHBOARD .rectangle-top-2 {
+    background-color: #fafafa;
+    border: 1px solid;
+    border-color: var(--gray-200);
+    border-radius: 9px;
+    height: 44px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 734px;
+  }
+  
+  .DASHBOARD .see-all-2 {
+    height: 14px;
+    left: 668px;
+    position: absolute;
+    top: 17px;
+    width: 47px;
+  }
+  
+  .DASHBOARD .overlap-group-2 {
+    height: 14px;
+    position: relative;
+    width: 45px;
+  }
+  
+  .DASHBOARD .icon-instance-node {
+    height: 8px !important;
+    left: 36px !important;
+    position: absolute !important;
+    top: 3px !important;
+    width: 9px !important;
+  }
+  
+  .DASHBOARD .text-wrapper-7 {
+    color: #afacac;
+    font-family: "Roboto-Regular", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    width: 45px;
+  }
+  
+  .DASHBOARD .arrows {
+    height: 12px;
+    left: 606px;
+    position: absolute;
+    top: 20px;
+    width: 27px;
+  }
+  
+  .DASHBOARD .selectarrow-2 {
+    height: 13px !important;
+    left: -1px !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 14px !important;
+  }
+  
+  .DASHBOARD .selectarrow-3 {
+    height: 13px !important;
+    left: 14px !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 14px !important;
+  }
+  
+  .DASHBOARD .text-wrapper-8 {
+    color: #000000;
+    font-family: "Montserrat-Medium", Helvetica;
+    font-size: 16px;
+    font-weight: 500;
+    left: 547px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 9px;
+    white-space: nowrap;
+    width: 68px;
+  }
+  
+  .DASHBOARD .current-tasks-2 {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    left: 18px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 7px;
+    width: 313px;
+  }
+  
+  .DASHBOARD .middle {
+    height: 105px;
+    left: 296px;
+    position: absolute;
+    top: 478px;
+    width: 1166px;
+  }
+  
+  .DASHBOARD .time-spent-2 {
+    height: 105px;
+    left: 759px;
+    position: absolute;
+    top: 0;
+    width: 409px;
+  }
+  
+  .DASHBOARD .overlap-group-3 {
+    height: 105px;
+    position: relative;
+  }
+  
+  .DASHBOARD .whole-card {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #00000017, inset 0px 4px 16px #0000001c;
+    height: 105px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 363px;
+  }
+  
+  .DASHBOARD .element-6 {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 40px;
+    font-weight: 600;
+    left: 49px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 36px;
+    width: 140px;
+  }
+  
+  .DASHBOARD .span {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 40px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+  }
+  
+  .DASHBOARD .text-wrapper-9 {
+    font-size: 20px;
+  }
+  
+  .DASHBOARD .text-wrapper-10 {
+    font-size: 36px;
+  }
+  
+  .DASHBOARD .in-progress-wrapper {
+    height: 46px;
+    left: 204px;
+    position: absolute;
+    top: 42px;
+    width: 205px;
+  }
+  
+  .DASHBOARD .completed-tasks {
+    height: 105px;
+    left: 389px;
+    position: absolute;
+    top: 0;
+    width: 367px;
+  }
+  
+  .DASHBOARD .overlap-6 {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #00000017, inset 0px 4px 16px #0000001c;
+    height: 105px;
+    position: relative;
+    width: 363px;
+  }
+  
+  .DASHBOARD .overlap-group-4 {
+    height: 70px;
+    left: 19px;
+    position: absolute;
+    top: 17px;
+    width: 76px;
+  }
+  
+  .DASHBOARD .element-7 {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 40px;
+    font-weight: 600;
+    left: 21px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    opacity: 0.8;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 22px;
+    width: 44px;
+  }
+  
+  .DASHBOARD .spinner {
+    height: 69px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: rotate(0.38deg);
+    width: 76px;
+  }
+  
+  .DASHBOARD .spinner-secondary {
+    height: 69px;
+    position: relative;
+  }
+  
+  .DASHBOARD .spinner-atom {
+    height: 69px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: rotate(-0.38deg);
+    width: 76px;
+  }
+  
+  .DASHBOARD .completed-task {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    left: 125px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 42px;
+    width: 203px;
+  }
+  
+  .DASHBOARD .in-progress-tasks {
+    height: 105px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 386px;
+  }
+  
+  .DASHBOARD .overlap-7 {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #00000017, inset 0px 4px 16px #0000001c;
+    height: 105px;
+    position: relative;
+    width: 382px;
+  }
+  
+  .DASHBOARD .overlap-group-5 {
+    height: 70px;
+    left: 30px;
+    position: absolute;
+    top: 16px;
+    width: 76px;
+  }
+  
+  .DASHBOARD .text-wrapper-11 {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 40px;
+    font-weight: 600;
+    left: 24px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 21px;
+    width: 44px;
+  }
+  
+  .DASHBOARD .in-progress {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    left: 133px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 34px;
+    width: 203px;
+  }
+  
+  .DASHBOARD .upper {
+    height: 322px;
+    left: 296px;
+    position: absolute;
+    top: 144px;
+    width: 1124px;
+  }
+  
+  .DASHBOARD .pomodoro-timer-card {
+    height: 231px;
+    left: 759px;
+    position: absolute;
+    top: 91px;
+    width: 367px;
+  }
+  
+  .DASHBOARD .overlap-group-6 {
+    background-image: url(./card-background.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    height: 241px;
+    left: -6px;
+    position: relative;
+    top: -2px;
+    width: 375px;
+  }
+  
+  .DASHBOARD .text-wrapper-12 {
+    color: #000000;
+    font-family: "Roboto Mono-Bold", Helvetica;
+    font-size: 9px;
+    font-weight: 700;
+    left: 185px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 208px;
+    width: 168px;
+  }
+  
+  .DASHBOARD .text-wrapper-13 {
+    color: #000000;
+    font-family: "Roboto Mono-Bold", Helvetica;
+    font-size: 40px;
+    font-weight: 700;
+    left: 55px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 19px;
+    width: 158px;
+  }
+  
+  .DASHBOARD .stopwatch-instance {
+    height: 27px !important;
+    left: 311px !important;
+    position: absolute !important;
+    top: 32px !important;
+    width: 31px !important;
+  }
+  
+  .DASHBOARD .play-stop {
+    height: 40px;
+    left: 87px;
+    position: absolute;
+    top: 183px;
+    width: 59px;
+  }
+  
+  .DASHBOARD .play-fill {
+    height: 40px !important;
+    left: 32px !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 27px !important;
+  }
+  
+  .DASHBOARD .pause-fill {
+    height: 40px !important;
+    left: 0 !important;
+    position: absolute !important;
+    top: 0 !important;
+    width: 27px !important;
+  }
+  
+  .DASHBOARD .overlap-8 {
+    height: 29px;
+    left: 64px;
+    position: absolute;
+    top: 188px;
+    width: 21px;
+  }
+  
+  .DASHBOARD .vector {
+    height: 26px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 21px;
+  }
+  
+  .DASHBOARD .img {
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    top: 0;
+    width: 7px;
+  }
+  
+  .DASHBOARD .best-results {
+    height: 229px;
+    left: 389px;
+    position: absolute;
+    top: 91px;
+    width: 365px;
+  }
+  
+  .DASHBOARD .overlap-9 {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #00000017, inset 0px 4px 16px #0000001c;
+    height: 229px;
+    position: relative;
+    width: 363px;
+  }
+  
+  .DASHBOARD .overlap-10 {
+    height: 145px;
+    left: 46px;
+    position: absolute;
+    top: 69px;
+    width: 296px;
+  }
+  
+  .DASHBOARD .uprectangle-right {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #e9ecef;
+    border-radius: 3px;
+    height: 118px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 289px;
+  }
+  
+  .DASHBOARD .days {
+    box-shadow: inset 0px 4px 6px #b9ceb75c, 0px 4px 6px #00000030;
+    height: 96px;
+    left: 4px;
+    position: absolute;
+    top: 49px;
+    width: 292px;
+  }
+  
+  .DASHBOARD .text-wrapper-14 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 80px;
+    width: 24px;
+  }
+  
+  .DASHBOARD .text-wrapper-15 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 45px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 81px;
+    width: 25px;
+  }
+  
+  .DASHBOARD .text-wrapper-16 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 89px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 80px;
+    width: 33px;
+  }
+  
+  .DASHBOARD .text-wrapper-17 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 134px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 80px;
+    width: 28px;
+  }
+  
+  .DASHBOARD .text-wrapper-18 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 176px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 80px;
+    width: 26px;
+  }
+  
+  .DASHBOARD .text-wrapper-19 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 212px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 80px;
+    width: 26px;
+  }
+  
+  .DASHBOARD .text-wrapper-20 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 251px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 80px;
+    width: 27px;
+  }
+  
+  .DASHBOARD .overlap-group-7 {
+    height: 61px;
+    left: -2px;
+    position: absolute;
+    top: 0;
+    width: 280px;
+  }
+  
+  .DASHBOARD .vector-2 {
+    height: 58px;
+    left: 0;
+    position: absolute;
+    top: 3px;
+    width: 280px;
+  }
+  
+  .DASHBOARD .points {
+    height: 55px;
+    left: 32px;
+    position: absolute;
+    top: 0;
+    width: 224px;
+  }
+  
+  .DASHBOARD .ellipse {
+    background-color: #80d889;
+    border-radius: 5.54px/4.5px;
+    height: 9px;
+    left: 143px;
+    position: absolute;
+    top: 0;
+    width: 11px;
+  }
+  
+  .DASHBOARD .ellipse-2 {
+    background-color: #0c5313;
+    border-radius: 3.23px/2.5px;
+    height: 5px;
+    left: 64px;
+    position: absolute;
+    top: 31px;
+    width: 6px;
+  }
+  
+  .DASHBOARD .ellipse-3 {
+    background-color: #0c5313;
+    border-radius: 3.23px/2.5px;
+    height: 5px;
+    left: 110px;
+    position: absolute;
+    top: 36px;
+    width: 6px;
+  }
+  
+  .DASHBOARD .ellipse-4 {
+    background-color: #0c5313;
+    border-radius: 3.23px/2.5px;
+    height: 5px;
+    left: 174px;
+    position: absolute;
+    top: 21px;
+    width: 6px;
+  }
+  
+  .DASHBOARD .ellipse-5 {
+    background-color: #0c5313;
+    border-radius: 3.23px/2.5px;
+    height: 5px;
+    left: 218px;
+    position: absolute;
+    top: 31px;
+    width: 6px;
+  }
+  
+  .DASHBOARD .ellipse-6 {
+    background-color: #0c5313;
+    border-radius: 3.23px/2.5px;
+    height: 5px;
+    left: 27px;
+    position: absolute;
+    top: 50px;
+    width: 6px;
+  }
+  
+  .DASHBOARD .ellipse-7 {
+    background-color: #0c5313;
+    border-radius: 3.23px/2.5px;
+    height: 5px;
+    left: 0;
+    position: absolute;
+    top: 31px;
+    width: 6px;
+  }
+  
+  .DASHBOARD .text-wrapper-21 {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    left: 122px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    top: 22px;
+    width: 179px;
+  }
+  
+  .DASHBOARD .working-hours {
+    height: 229px;
+    left: 0;
+    position: absolute;
+    top: 91px;
+    width: 384px;
+  }
+  
+  .DASHBOARD .overlap-11 {
+    -webkit-backdrop-filter: blur(8px) brightness(100%);
+    backdrop-filter: blur(8px) brightness(100%);
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0px 4px 12px #00000017, inset 0px 4px 16px #0000001c;
+    height: 229px;
+    position: relative;
+    width: 382px;
+  }
+  
+  .DASHBOARD .overlap-group-8 {
+    height: 143px;
+    left: 15px;
+    position: absolute;
+    top: 72px;
+    width: 342px;
+  }
+  
+  .DASHBOARD .uprectangle-right-2 {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--gray-200);
+    border-radius: 4px;
+    height: 118px;
+    left: 49px;
+    position: absolute;
+    top: 0;
+    width: 293px;
+  }
+  
+  .DASHBOARD .rsc {
+    height: 143px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 330px;
+  }
+  
+  .DASHBOARD .charts-working-hours {
+    height: 95px;
+    left: 53px;
+    position: absolute;
+    top: 19px;
+    width: 281px;
+  }
+  
+  .DASHBOARD .days-2 {
+    box-shadow: inset 0px 4px 6px #b9ceb75c, 0px 4px 6px #00000030;
+    height: 16px;
+    left: 45px;
+    position: absolute;
+    top: 127px;
+    width: 299px;
+  }
+  
+  .DASHBOARD .text-wrapper-22 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 26px;
+  }
+  
+  .DASHBOARD .text-wrapper-23 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 49px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 1px;
+    width: 12px;
+  }
+  
+  .DASHBOARD .text-wrapper-24 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 96px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 15px;
+  }
+  
+  .DASHBOARD .text-wrapper-25 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 145px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 13px;
+  }
+  
+  .DASHBOARD .text-wrapper-26 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 191px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 18px;
+  }
+  
+  .DASHBOARD .text-wrapper-27 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 230px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 15px;
+  }
+  
+  .DASHBOARD .text-wrapper-28 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 700;
+    left: 272px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 0;
+    width: 13px;
+  }
+  
+  .DASHBOARD .hours-graphic {
+    height: 115px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 43px;
+  }
+  
+  .DASHBOARD .text-wrapper-29 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 0;
+    width: 37px;
+  }
+  
+  .DASHBOARD .text-wrapper-30 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    left: 4px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 47px;
+    width: 33px;
+  }
+  
+  .DASHBOARD .text-wrapper-31 {
+    color: #000000;
+    font-family: "Roboto-Bold", Helvetica;
+    font-size: 14px;
+    font-weight: 700;
+    left: 2px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 99px;
+    width: 23px;
+  }
+  
+  .DASHBOARD .text-wrapper-32 {
+    color: #000000;
+    font-family: "Montserrat-SemiBold", Helvetica;
+    font-size: 16px;
+    font-weight: 600;
+    left: 120px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    text-shadow: 0px 4px 7px #00000040;
+    top: 22px;
+    width: 203px;
+  }
+  
+  .DASHBOARD .text-wrapper-33 {
+    color: #000000;
+    font-family: "Montserrat-Bold", Helvetica;
+    font-size: 40px;
+    font-weight: 700;
+    left: 106px;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+  }
+  
+  .DASHBOARD .FOOTER {
+    background-color: transparent;
+    height: 132px;
+    left: 0;
+    position: absolute;
+    top: 892px;
+    width: 1697px;
+  }
+  
+  .DASHBOARD .overlap-12 {
+    height: 132px;
+    position: relative;
+    width: 1697px;
+  }
+  
+  .DASHBOARD .rectangle {
+    background-color: #b8ceb6;
+    box-shadow: inset 0px 4px 7px #00000091, 0px 4px 15px #00000029;
+    height: 132px;
+    left: 83px;
+    position: absolute;
+    top: 0;
+    width: 1614px;
+  }
+  
+  .DASHBOARD .desktop-footer {
+    height: 125px;
+    left: 0;
+    position: absolute;
+    top: 7px;
+    width: 1676px;
+  }
+  
+  .DASHBOARD .item-item-item {
+    color: var(--dark-grey);
+    font-family: "Roboto Mono-Bold", Helvetica;
+    font-size: 12px;
+    font-weight: 400;
+    left: 297px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 82px;
+    width: 1033px;
+  }
+  
+  .DASHBOARD .text-wrapper-34 {
+    font-weight: 700;
+  }
+  
+  .DASHBOARD .text-wrapper-35 {
+    font-family: "Roboto Mono-Regular", Helvetica;
+  }
+  
+  .DASHBOARD .row {
+    align-items: center;
+    display: flex;
+    gap: 213px;
+    left: 552px;
+    position: absolute;
+    top: 59px;
+    width: 597px;
+  }
+  
+  .DASHBOARD .col-md {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 513px;
+  }
+  
+  .DASHBOARD .text-wrapper-36 {
+    color: var(--black);
+    font-family: var(--h-6-font-family);
+    font-size: var(--h-6-font-size);
+    font-style: var(--h-6-font-style);
+    font-weight: var(--h-6-font-weight);
+    letter-spacing: var(--h-6-letter-spacing);
+    line-height: var(--h-6-line-height);
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .DASHBOARD .navbar {
+    height: 96px;
+    left: 74px;
+    position: absolute;
+    top: 7px;
+    width: 1502px;
+  }
+  
+  .DASHBOARD .overlap-13 {
+    height: 96px;
+    position: relative;
+  }
+  
+  .DASHBOARD .rectangle-2 {
+    background-color: #b8ceb6;
+    box-shadow: inset 0px 4px 4px #00000091, 0px 4px 6px #00000029;
+    height: 96px;
+    left: 36px;
+    position: absolute;
+    top: 0;
+    width: 1466px;
+  }
+  
+  .DASHBOARD .desktop-top-navbar {
+    height: 94px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 1502px;
+  }
+  
+  .DASHBOARD .logo {
+    align-items: center;
+    display: inline-flex;
+    gap: 10px;
+    left: 196px;
+    position: absolute;
+    top: 28px;
+  }
+  
+  .DASHBOARD .logo-2 {
+    align-items: center;
+    display: inline-flex;
+    flex: 0 0 auto;
+    gap: 10px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .DASHBOARD .text-wrapper-37 {
+    -webkit-text-stroke: 1px #000000;
+    color: var(--defaultblack);
+    font-family: "Montserrat-Bold", Helvetica;
+    font-size: 36px;
+    font-weight: 700;
+    height: 37px;
+    letter-spacing: 0.1px;
+    line-height: 24px;
+    margin-left: -1px;
+    margin-top: -2px;
+    position: relative;
+    text-shadow: 0px 3px 7px #00000040;
+    width: 159px;
+  }
+  
+  .DASHBOARD .filled-medium-filled-button {
+    background-color: var(--light-background-color) !important;
+    border-radius: 25px !important;
+    left: 1215px !important;
+    position: absolute !important;
+    top: 31px !important;
+  }
+  
+  .DASHBOARD .filled-medium-filled-instance {
+    color: var(--text-color) !important;
+    font-family: "Montserrat-Bold", Helvetica !important;
+    font-size: 16px !important;
+    font-style: unset !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
+    line-height: 28px !important;
+  }
+  
+  .DASHBOARD .text-large-text-2 {
+    align-items: center;
+    background-color: #9aaf98;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    left: 495px;
+    padding: 10px 32px;
+    position: absolute;
+    top: 23px;
+    width: 140px;
+  }
+  
+  .DASHBOARD .text-wrapper-38 {
+    color: #000000;
+    font-family: "Montserrat-Bold", Helvetica;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    line-height: 28px;
+    margin-left: -18.5px;
+    margin-right: -18.5px;
+    margin-top: -1px;
+    position: relative;
+    white-space: nowrap;
+    width: fit-content;
+  }
+  
+  .DASHBOARD .text-large-text-button {
+    left: 641px !important;
+    position: absolute !important;
+    top: 23px !important;
+  }
+  
+  .DASHBOARD .text-large-text-instance {
+    color: #000000 !important;
+    font-family: "Montserrat-Bold", Helvetica !important;
+    font-size: 16px !important;
+    font-style: unset !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
+    line-height: 28px !important;
+  }
+  
+  .DASHBOARD .text-large-text-button-instance {
+    left: 755px !important;
+    position: absolute !important;
+    top: 23px !important;
+  }
+  
+  .DASHBOARD .design-component-instance-node {
+    color: var(--defaultblack) !important;
+    font-family: "Montserrat-Bold", Helvetica !important;
+    font-size: 16px !important;
+    font-style: unset !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.2px !important;
+    line-height: 28px !important;
+  }
+  
+  .DASHBOARD .overlap-group-9 {
+    height: 51px;
+    left: 1377px;
+    position: absolute;
+    top: 21px;
+    width: 66px;
+  }
+  
+  .DASHBOARD .ellipse-8 {
+    background-color: #758973;
+    border-radius: 33px/25px;
+    height: 50px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 66px;
+  }
+  
+  .DASHBOARD .person-circle {
+    height: 50px !important;
+    left: 0 !important;
+    position: absolute !important;
+    top: 1px !important;
+    width: 66px !important;
+  }
+  
+  .DASHBOARD .vector-3 {
+    height: 26px;
+    left: 1170px;
+    position: absolute;
+    top: 35px;
+    width: 27px;
+  }
+  
