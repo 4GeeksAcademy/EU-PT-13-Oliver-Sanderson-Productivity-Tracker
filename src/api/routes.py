@@ -5,7 +5,7 @@ from flask import Flask, request, jsonify, url_for, Blueprint
 from api.models import db, User, Session, Test
 from api.utils import generate_sitemap, APIException
 import datetime
-from sqlalchemy import delete
+from sqlalchemy import delete, update
 from flask_jwt_extended import (
     JWTManager, jwt_required, create_access_token,
     get_jwt_identity, 
@@ -72,6 +72,7 @@ def handle_signup():
             return jsonify(response_body), 400
 
 
+
 @api.route('/users', methods=['GET', 'DELETE', 'PUT'])
 @jwt_required()
 def handle_users():
@@ -96,6 +97,8 @@ def handle_users():
                     user_to_edit.name = request_body['name']
                 if ('email' in request_body):
                     user_to_edit.email = request_body['email']
+
+                # TODO update the new values to session
             else:
                 response_body = "User does not exist"
                 return jsonify(response_body), 400
@@ -147,9 +150,44 @@ def handle_users():
         response_body.append(temp_user)
     return jsonify(response_body), 200
 
-@api.route('/sessions', methods=['GET', 'POST', 'DELETE'])
+@api.route('/sessions', methods=['GET', 'POST', 'PUT', 'DELETE'])
 @jwt_required()
 def handle_sessions():
+
+    if request.method == "PUT":
+        print("PUT")
+        request_body = request.get_json()
+
+        # Example PUT body:
+        # {
+        #     "id" : 23,
+        #     "total_time" : 1000,
+        #     "work_time" : 600,
+        #     "fun_time" : 400
+        # }
+
+        # Check request_body has 'id'
+        if ('id' in request_body):
+            # Check the user exists
+            check = Session.query.filter(Session.id == request_body["id"]).first()
+            if check is not None:
+                session = Session()
+                session_to_edit = Session.query.filter(Session.id == request_body["id"]).first()
+                session_to_edit.total_time = request_body['total_time']
+                session_to_edit.work_time = request_body['work_time']
+                session_to_edit.fun_time = request_body['work_time']
+
+                print(request_body['total_time'])
+                print(session_to_edit.total_time)
+
+                # TODO update the new values to session
+            else:
+                response_body = "Session does not exist"
+                return jsonify(response_body), 400
+
+        else:
+            response_body = "Missing body content. Needs 'id' of the session to update."
+            return jsonify(response_body), 400
 
     if request.method == "DELETE":
         request_body = request.get_json()

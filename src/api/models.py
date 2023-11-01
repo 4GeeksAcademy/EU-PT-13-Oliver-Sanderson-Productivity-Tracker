@@ -21,7 +21,7 @@ class User(db.Model):
             "id": self.id,
             "email": self.email,
             "name": self.name,
-            "last_name": self.lastname,
+            "last_name": self.last_name,
             # do not serialize the password, its a security breach
         }
     def check_password(self, password):
