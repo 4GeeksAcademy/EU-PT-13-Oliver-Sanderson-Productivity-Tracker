@@ -3,7 +3,7 @@ import { FeaturesCenter } from "../../components/FeaturesCenter";
 import { MdiCardsHeart1 } from "../../icons/MdiCardsHeart1";
 import { StreamlineMoneyGraphArrowIncreaseAscendGrowthUpArrowSta } from "../../icons/StreamlineMoneyGraphArrowIncreaseAscendGrowthUpArrowSta";
 import { Vector1 } from "../../icons/Vector1";
-import "./style.css";
+import "../../styles/features.css";
 
 export const Features = () => {
   return (
