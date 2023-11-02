@@ -1,32 +1,19 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="#">KorYoku</a>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav ml-auto">
-          <li className="nav-item">
-            <Button variant="outline-primary">Sign In</Button>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Home</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">About</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Contact Us</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Feedback</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  );
+	return (
+		<nav className="navbar navbar-light bg-light">
+			<div className="container">
+				<Link to="/">
+					<span className="navbar-brand mb-0 h1">React Boilerplate</span>
+				</Link>
+				<div className="ml-auto">
+					<Link to="/demo">
+						<button className="btn btn-primary">Check the Context in action</button>
+					</Link>
+				</div>
+			</div>
+		</nav>
+	);
 };

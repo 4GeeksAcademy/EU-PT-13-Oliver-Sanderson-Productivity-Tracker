@@ -1,18 +1,10 @@
-import React from "react";
+import React, { Component } from "react";
 
-const Footer = () => {
-  const year = new Date().getFullYear();
-
-  return (
-    <div className="desktop-footer bg-light text-center py-3">
-      <p>
-        &copy; Your Website {year} |{" "}
-        <a href="#" className="text-decoration-none">Terms & Conditions</a>{" "}
-        | <a href="#" className="text-decoration-none">FAQ's</a>{" "}
-        | <a href="#" className="text-decoration-none">Feedback</a>
-      </p>
-    </div>
-  );
-};
-
-export default Footer;
+export const Footer = () => (
+	<footer className="footer mt-auto py-3 text-center">
+		<p>
+			Made with <i className="fa fa-heart text-danger" /> by{" "}
+			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
+		</p>
+	</footer>
+);

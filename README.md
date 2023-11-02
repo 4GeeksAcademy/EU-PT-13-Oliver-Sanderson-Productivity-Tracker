@@ -19,6 +19,8 @@ It is recomended to install the backend first, make sure you have Python 3.8, Pi
 2. Create a .env file based on the .env.example: `$ cp .env.example .env`
 3. Install your database engine and create your database, depending on your database you have to create a DATABASE_URL variable with one of the possible values, make sure you replace the valudes with your database information:
 
+You might need to install JWT for backend `$ pip install flask-jwt-extended`
+
 | Engine    | DATABASE_URL                                        |
 | --------- | --------------------------------------------------- |
 | SQLite    | sqlite:////test.db                                  |
