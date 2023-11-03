@@ -10,6 +10,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/Footer";
+import {ContactUs} from "./component/ContactUs";
 
 // Create your first component
 const Layout = () => {
@@ -47,6 +48,7 @@ export {
   Single,
   Navbar,
   Footer,
+  ContactUs,
   ScrollToTop,
   injectContext,
 };
